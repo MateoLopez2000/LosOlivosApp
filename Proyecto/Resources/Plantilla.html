@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .midmargin {
+            padding: 4px 2px;
+            margin: 4px 2px;
+        }
+
+        .lowmargin {
+            padding: 2px 2px;
+            margin: 2px 2px;
+        }
+    </style>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div>
+                     <div>
+                         <h1 align="center" class="lowmargin"><strong>Clinica Los Olivos</strong></h1>
+                         <p align="center" class="lowmargin">Dr. Luis Bazan Chirveches</p>
+                         <p align="center" class="lowmargin">Especialista en Ortopedia y Traumatologia</p>
+                     </div>
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="column">
+                            <p class="midmargin"><strong>Fecha: </strong></p>
+                        </div>
+                        <div class="column">
+                            <p class="midmargin">@Fecha</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="midmargin">Información del Paciente</h2>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <p class="midmargin"><strong>Nombre Completo: </strong></p>
+                        </div>
+                        <div class="column">
+                            <p class="midmargin">@Nombre</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <p class="midmargin"><strong>Edad: </strong></p>
+                        </div>
+                        <div class="column">
+                            <p class="midmargin">@Edad</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <p class="midmargin"><strong>Género: </strong></p>
+                        </div>
+                        <div class="column">
+                            <p class="midmargin">@Genero</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <p class="midmargin"><strong>Diagnóstico: </strong></p>
+                        </div>
+                        <div class="column">
+                            <p class="midmargin">@Diagnostico</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

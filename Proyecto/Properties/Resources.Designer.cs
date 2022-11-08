@@ -83,6 +83,16 @@ namespace OrthoAnalisis.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nexticon {
+            get {
+                object obj = ResourceManager.GetObject("nexticon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap olivos {
             get {
                 object obj = ResourceManager.GetObject("olivos", resourceCulture);
@@ -119,6 +129,48 @@ namespace OrthoAnalisis.Properties {
         internal static string Plantilla {
             get {
                 return ResourceManager.GetString("Plantilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///&lt;!DOCTYPE html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+        ///&lt;body&gt;
+        ///    &lt;style&gt;
+        ///        * {
+        ///            box-sizing: border-box;
+        ///        }
+        ///
+        ///        /* Create two equal columns that floats next to each other */
+        ///        .column {
+        ///            float: left;
+        ///        }
+        ///
+        ///        /* Clear floats after the columns */
+        ///        .row:after {
+        ///            content: &quot;&quot;;
+        ///            display: table;
+        ///            clear: both;
+        ///        }
+        ///
+        ///        .midmargin {
+        ///            padding: 4px 2px;
+        ///            margin:  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Plantilla2 {
+            get {
+                return ResourceManager.GetString("Plantilla2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ready {
+            get {
+                object obj = ResourceManager.GetObject("ready", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

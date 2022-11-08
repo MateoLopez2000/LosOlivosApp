@@ -12,6 +12,7 @@ using AForge.Video.DirectShow;
 using AForge.Video;
 using System.util;
 using OrthoAnalisis.Properties;
+using System.Linq;
 
 namespace Proyecto
 {
@@ -23,6 +24,11 @@ namespace Proyecto
         private VideoCaptureDevice MyWebCam2;
         private bool photoTaken1 = false;
         private bool photoTaken2 = false;
+        int camera1 = 10;
+        int camera2 = 10;
+
+
+        List<System.Drawing.Image> images = new List<System.Drawing.Image>();
         public Form1()
         {
             InitializeComponent();
@@ -34,6 +40,7 @@ namespace Proyecto
                 SaveFileDialog savefile = new SaveFileDialog();
 
                 string PaginaHTML_Texto = Resources.Plantilla.ToString();
+                string Pagina2 = Resources.Plantilla2.ToString();
                 PaginaHTML_Texto = PaginaHTML_Texto.Replace("@Nombre", txtnombres.Text);
                 PaginaHTML_Texto = PaginaHTML_Texto.Replace("@Edad", txtEdad.Text);
                 PaginaHTML_Texto = PaginaHTML_Texto.Replace("@Genero", combosex.SelectedItem.ToString());
@@ -52,34 +59,67 @@ namespace Proyecto
 
                         PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
                         pdfDoc.Open();
-                        pdfDoc.Add(new Phrase(""));
-
-                        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Resources.olivos, System.Drawing.Imaging.ImageFormat.Png);
-                        img.ScaleToFit(120, 120);
-                        img.Alignment = iTextSharp.text.Image.UNDERLYING;
-
-                        img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60);
-                        pdfDoc.Add(img);
-
-                        iTextSharp.text.Image img2 = iTextSharp.text.Image.GetInstance(picBox1.Image, System.Drawing.Imaging.ImageFormat.Png);
-                        img2.ScaleToFit(240, 240);
-                        img2.Alignment = iTextSharp.text.Image.UNDERLYING;
-
-                        img2.SetAbsolutePosition(pdfDoc.LeftMargin + 170, pdfDoc.Bottom + 262);
-                        pdfDoc.Add(img2);
-
-
-                        iTextSharp.text.Image img3 = iTextSharp.text.Image.GetInstance(picBox2.Image, System.Drawing.Imaging.ImageFormat.Png);
-                        img3.ScaleToFit(250, 250);
-                        img3.Alignment = iTextSharp.text.Image.UNDERLYING;
-
-                        img3.SetAbsolutePosition(pdfDoc.LeftMargin + 170, pdfDoc.Bottom + 8);
-                        pdfDoc.Add(img3);
 
                         using (StringReader sr = new StringReader(PaginaHTML_Texto))
                         {
                             XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
                         }
+
+
+                        iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(Resources.olivos, System.Drawing.Imaging.ImageFormat.Png);
+                        logo.ScaleToFit(120, 120);
+                        logo.Alignment = iTextSharp.text.Image.UNDERLYING;
+
+                        logo.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60);
+                        pdfDoc.Add(logo);
+
+                        iTextSharp.text.Image img1 = iTextSharp.text.Image.GetInstance(images[0], System.Drawing.Imaging.ImageFormat.Png);
+                        img1.ScaleToFit(220, 220);
+                        img1.Alignment = iTextSharp.text.Image.UNDERLYING;
+
+                        img1.SetAbsolutePosition(pdfDoc.LeftMargin + 170, pdfDoc.Bottom + 256);
+                        pdfDoc.Add(img1);
+
+
+                        iTextSharp.text.Image img2 = iTextSharp.text.Image.GetInstance(images[1], System.Drawing.Imaging.ImageFormat.Png);
+                        img2.ScaleToFit(220, 220);
+                        img2.Alignment = iTextSharp.text.Image.UNDERLYING;
+
+                        img2.SetAbsolutePosition(pdfDoc.LeftMargin + 170, pdfDoc.Bottom + 32);
+                        pdfDoc.Add(img2);
+
+
+                        pdfDoc.NewPage();
+
+
+                        using (StringReader sr = new StringReader(Pagina2))
+                        {
+                            XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+                        }
+
+                        pdfDoc.Add(logo);
+
+                        iTextSharp.text.Image img3 = iTextSharp.text.Image.GetInstance(images[2], System.Drawing.Imaging.ImageFormat.Png);
+                        img3.ScaleToFit(220, 220);
+                        img3.Alignment = iTextSharp.text.Image.UNDERLYING;
+
+                        img3.SetAbsolutePosition(pdfDoc.LeftMargin + 170, pdfDoc.Bottom + 456);
+                        pdfDoc.Add(img3);
+
+
+                        iTextSharp.text.Image img4 = iTextSharp.text.Image.GetInstance(images[3], System.Drawing.Imaging.ImageFormat.Png);
+                        img4.ScaleToFit(220, 220);
+                        img4.Alignment = iTextSharp.text.Image.UNDERLYING;
+
+                        img4.SetAbsolutePosition(pdfDoc.LeftMargin + 170, pdfDoc.Bottom + 232);
+                        pdfDoc.Add(img4);
+
+                        iTextSharp.text.Image img5 = iTextSharp.text.Image.GetInstance(images[4], System.Drawing.Imaging.ImageFormat.Png);
+                        img5.ScaleToFit(220, 220);
+                        img5.Alignment = iTextSharp.text.Image.UNDERLYING;
+
+                        img5.SetAbsolutePosition(pdfDoc.LeftMargin + 170, pdfDoc.Bottom + 8);
+                        pdfDoc.Add(img5);
 
                         pdfDoc.Close();
                         stream.Close();
@@ -102,21 +142,25 @@ namespace Proyecto
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadDevices();
+
+            startCamera1(sender, e);
+            startCamera2(sender, e);
             combosex.SelectedIndex = 0;
         }
 
         public void LoadDevices()
         {
             MyDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            if (MyDevices.Count > 0)
+            if (MyDevices.Count == 1)
             {
                 ExistDevices = true;
-                for (int i = 0; i < MyDevices.Count; i++) { 
-                        cboDevices.Items.Add(MyDevices[i].Name.ToString());
-                        cboDevices2.Items.Add(MyDevices[i].Name.ToString());
-                    }
-                cboDevices.Text = MyDevices[0].Name.ToString();
-                cboDevices2.Text = MyDevices[0].Name.ToString();
+                camera1 = 0;
+                camera2 = 0;
+            }
+            else if (MyDevices.Count > 1) {
+                ExistDevices = true;
+                camera1 = 0;
+                camera2 = 1;
             }
             else
                 ExistDevices = false;
@@ -170,8 +214,7 @@ namespace Proyecto
             {
                 CloseWebCam();
                 photoTaken1 = false;
-                int i = cboDevices.SelectedIndex;
-                string deviceName = MyDevices[i].MonikerString;
+                string deviceName = MyDevices[camera1].MonikerString;
                 MyWebCam = new VideoCaptureDevice(deviceName);
                 MyWebCam.NewFrame += new NewFrameEventHandler(Capture);
                 MyWebCam.Start();
@@ -184,8 +227,7 @@ namespace Proyecto
             {
                 CloseWebCam2();
                 photoTaken2 = false;
-                int i = cboDevices2.SelectedIndex;
-                string deviceName = MyDevices[i].MonikerString;
+                string deviceName = MyDevices[camera2].MonikerString;
                 MyWebCam2 = new VideoCaptureDevice(deviceName);
                 MyWebCam2.NewFrame += new NewFrameEventHandler(Capture2);
                 MyWebCam2.Start();
@@ -201,6 +243,7 @@ namespace Proyecto
                 CloseWebCam();
                 btnTakePhoto.Visible = false;
                 btnCaptureAgain.Visible = true;
+                nextButton1.Visible = true;
             }
         }
 
@@ -212,11 +255,14 @@ namespace Proyecto
                 CloseWebCam2();
                 btnCaptureAgain2.Visible = true;
                 btnTakePhoto2.Visible = false;
+                nextButton2.Visible = true;
             }
         }
 
         private void btnDeleteAll_Click(object sender, EventArgs e)
         {
+            images.Clear();
+            LoadDevices();
             startCamera1(sender, e);
             startCamera2(sender, e);
             resetFields();
@@ -224,5 +270,47 @@ namespace Proyecto
             photoTaken2 = false;
         }
 
+
+        private void nextButton1_Click(object sender, EventArgs e)
+        {
+            images.Add(picBox1.Image);
+            if(MyDevices.Count > camera1 + 2 )
+            {
+                camera1 = camera1 + 2;
+                startCamera1(sender, e);
+            }
+            else
+            {
+                nextButton1.Visible = false;
+                picBox1.Image = Resources.ready;
+                CloseWebCam();
+
+                if (images.Count < 3 )
+                {
+                    images.Add(picBox1.Image);
+                    images.Add(picBox2.Image);
+                }
+            }
+        }
+
+        private void nextButton2_Click(object sender, EventArgs e)
+        {
+            images.Add(picBox2.Image);
+            if (MyDevices.Count > camera2 + 2)
+            {
+                camera2 = camera2 + 2;
+                startCamera2(sender, e);
+            }
+            else {
+                nextButton2.Visible = false;
+                picBox2.Image = Resources.ready;
+                CloseWebCam2();
+                if (MyDevices.Count < 3)
+                {
+                    images.Add(picBox2.Image);
+                }
+            }
+
+        }
     }
 }

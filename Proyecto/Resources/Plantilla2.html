@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .midmargin {
+            padding: 4px 2px;
+            margin: 4px 2px;
+        }
+
+        .lowmargin {
+            padding: 2px 2px;
+            margin: 2px 2px;
+        }
+    </style>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div>
+                     <div>
+                         <h1 align="center" class="lowmargin"><strong>Clinica Los Olivos</strong></h1>
+                         <p align="center" class="lowmargin">Dr. Luis Bazan Chirveches</p>
+                         <p align="center" class="lowmargin">Especialista en Ortopedia y Traumatologia</p>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

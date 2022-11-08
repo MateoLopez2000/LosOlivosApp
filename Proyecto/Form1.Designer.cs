@@ -41,17 +41,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtDiagnostico = new System.Windows.Forms.TextBox();
-            this.cboDevices = new System.Windows.Forms.ComboBox();
             this.picBox1 = new System.Windows.Forms.PictureBox();
             this.btnTakePhoto = new System.Windows.Forms.Button();
             this.picBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnTakePhoto2 = new System.Windows.Forms.Button();
-            this.cboDevices2 = new System.Windows.Forms.ComboBox();
             this.btnCaptureAgain = new System.Windows.Forms.Button();
             this.btnCaptureAgain2 = new System.Windows.Forms.Button();
             this.btnDeleteAll = new System.Windows.Forms.Button();
+            this.nextButton1 = new System.Windows.Forms.Button();
+            this.nextButton2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox1)).BeginInit();
@@ -80,7 +80,7 @@
             this.label1.Location = new System.Drawing.Point(7, 29);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 16);
+            this.label1.Size = new System.Drawing.Size(170, 25);
             this.label1.TabIndex = 87;
             this.label1.Text = "Nombre Completo";
             // 
@@ -90,7 +90,7 @@
             this.txtnombres.Location = new System.Drawing.Point(150, 29);
             this.txtnombres.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtnombres.Name = "txtnombres";
-            this.txtnombres.Size = new System.Drawing.Size(430, 22);
+            this.txtnombres.Size = new System.Drawing.Size(430, 30);
             this.txtnombres.TabIndex = 88;
             // 
             // groupBox1
@@ -121,7 +121,7 @@
             this.combosex.Location = new System.Drawing.Point(375, 76);
             this.combosex.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.combosex.Name = "combosex";
-            this.combosex.Size = new System.Drawing.Size(205, 24);
+            this.combosex.Size = new System.Drawing.Size(205, 33);
             this.combosex.TabIndex = 97;
             // 
             // txtGenero
@@ -130,7 +130,7 @@
             this.txtGenero.Location = new System.Drawing.Point(93, 119);
             this.txtGenero.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtGenero.Name = "txtGenero";
-            this.txtGenero.Size = new System.Drawing.Size(0, 22);
+            this.txtGenero.Size = new System.Drawing.Size(0, 30);
             this.txtGenero.TabIndex = 96;
             // 
             // label7
@@ -141,7 +141,7 @@
             this.label7.Location = new System.Drawing.Point(7, 76);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 16);
+            this.label7.Size = new System.Drawing.Size(69, 25);
             this.label7.TabIndex = 94;
             this.label7.Text = "Edad :";
             // 
@@ -151,7 +151,7 @@
             this.txtEdad.Location = new System.Drawing.Point(77, 76);
             this.txtEdad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(203, 22);
+            this.txtEdad.Size = new System.Drawing.Size(203, 30);
             this.txtEdad.TabIndex = 95;
             // 
             // label6
@@ -161,7 +161,7 @@
             this.label6.Location = new System.Drawing.Point(303, 76);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 16);
+            this.label6.Size = new System.Drawing.Size(83, 25);
             this.label6.TabIndex = 91;
             this.label6.Text = "Género:";
             // 
@@ -171,7 +171,7 @@
             this.label2.Location = new System.Drawing.Point(7, 73);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.Size = new System.Drawing.Size(0, 28);
             this.label2.TabIndex = 89;
             // 
             // groupBox2
@@ -197,20 +197,9 @@
             this.txtDiagnostico.Size = new System.Drawing.Size(559, 84);
             this.txtDiagnostico.TabIndex = 0;
             // 
-            // cboDevices
-            // 
-            this.cboDevices.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboDevices.FormattingEnabled = true;
-            this.cboDevices.Location = new System.Drawing.Point(113, 153);
-            this.cboDevices.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cboDevices.Name = "cboDevices";
-            this.cboDevices.Size = new System.Drawing.Size(275, 24);
-            this.cboDevices.TabIndex = 93;
-            this.cboDevices.SelectedIndexChanged += new System.EventHandler(this.startCamera1);
-            // 
             // picBox1
             // 
-            this.picBox1.Location = new System.Drawing.Point(14, 190);
+            this.picBox1.Location = new System.Drawing.Point(-1, 190);
             this.picBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picBox1.Name = "picBox1";
             this.picBox1.Size = new System.Drawing.Size(608, 628);
@@ -225,7 +214,7 @@
             this.btnTakePhoto.FlatAppearance.BorderSize = 0;
             this.btnTakePhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTakePhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTakePhoto.Location = new System.Drawing.Point(415, 143);
+            this.btnTakePhoto.Location = new System.Drawing.Point(165, 143);
             this.btnTakePhoto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTakePhoto.Name = "btnTakePhoto";
             this.btnTakePhoto.Size = new System.Drawing.Size(88, 41);
@@ -235,7 +224,7 @@
             // 
             // picBox2
             // 
-            this.picBox2.Location = new System.Drawing.Point(631, 190);
+            this.picBox2.Location = new System.Drawing.Point(630, 190);
             this.picBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picBox2.Name = "picBox2";
             this.picBox2.Size = new System.Drawing.Size(583, 628);
@@ -250,9 +239,9 @@
             this.label3.Location = new System.Drawing.Point(27, 153);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 16);
+            this.label3.Size = new System.Drawing.Size(98, 25);
             this.label3.TabIndex = 97;
-            this.label3.Text = "Cámara 1:";
+            this.label3.Text = "Cámara 1";
             // 
             // label4
             // 
@@ -261,9 +250,9 @@
             this.label4.Location = new System.Drawing.Point(643, 156);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 16);
+            this.label4.Size = new System.Drawing.Size(98, 25);
             this.label4.TabIndex = 99;
-            this.label4.Text = "Cámara 2:";
+            this.label4.Text = "Cámara 2";
             // 
             // btnTakePhoto2
             // 
@@ -272,24 +261,13 @@
             this.btnTakePhoto2.FlatAppearance.BorderSize = 0;
             this.btnTakePhoto2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTakePhoto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTakePhoto2.Location = new System.Drawing.Point(1026, 143);
+            this.btnTakePhoto2.Location = new System.Drawing.Point(768, 145);
             this.btnTakePhoto2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTakePhoto2.Name = "btnTakePhoto2";
             this.btnTakePhoto2.Size = new System.Drawing.Size(88, 41);
             this.btnTakePhoto2.TabIndex = 100;
             this.btnTakePhoto2.UseVisualStyleBackColor = true;
             this.btnTakePhoto2.Click += new System.EventHandler(this.btnTakePhoto2_Click);
-            // 
-            // cboDevices2
-            // 
-            this.cboDevices2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboDevices2.FormattingEnabled = true;
-            this.cboDevices2.Location = new System.Drawing.Point(729, 153);
-            this.cboDevices2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cboDevices2.Name = "cboDevices2";
-            this.cboDevices2.Size = new System.Drawing.Size(273, 24);
-            this.cboDevices2.TabIndex = 101;
-            this.cboDevices2.SelectedIndexChanged += new System.EventHandler(this.startCamera2);
             // 
             // btnCaptureAgain
             // 
@@ -299,7 +277,7 @@
             this.btnCaptureAgain.FlatAppearance.BorderSize = 0;
             this.btnCaptureAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCaptureAgain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaptureAgain.Location = new System.Drawing.Point(507, 148);
+            this.btnCaptureAgain.Location = new System.Drawing.Point(271, 149);
             this.btnCaptureAgain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCaptureAgain.Name = "btnCaptureAgain";
             this.btnCaptureAgain.Size = new System.Drawing.Size(80, 32);
@@ -315,7 +293,7 @@
             this.btnCaptureAgain2.FlatAppearance.BorderSize = 0;
             this.btnCaptureAgain2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCaptureAgain2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaptureAgain2.Location = new System.Drawing.Point(1120, 148);
+            this.btnCaptureAgain2.Location = new System.Drawing.Point(873, 149);
             this.btnCaptureAgain2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCaptureAgain2.Name = "btnCaptureAgain2";
             this.btnCaptureAgain2.Size = new System.Drawing.Size(80, 32);
@@ -339,23 +317,56 @@
             this.btnDeleteAll.UseVisualStyleBackColor = false;
             this.btnDeleteAll.Click += new System.EventHandler(this.btnDeleteAll_Click);
             // 
+            // nextButton1
+            // 
+            this.nextButton1.BackColor = System.Drawing.Color.Transparent;
+            this.nextButton1.BackgroundImage = global::OrthoAnalisis.Properties.Resources.nexticon;
+            this.nextButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.nextButton1.FlatAppearance.BorderSize = 0;
+            this.nextButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nextButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextButton1.Location = new System.Drawing.Point(369, 148);
+            this.nextButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nextButton1.Name = "nextButton1";
+            this.nextButton1.Size = new System.Drawing.Size(80, 32);
+            this.nextButton1.TabIndex = 105;
+            this.nextButton1.UseVisualStyleBackColor = false;
+            this.nextButton1.Visible = false;
+            this.nextButton1.Click += new System.EventHandler(this.nextButton1_Click);
+            // 
+            // nextButton2
+            // 
+            this.nextButton2.BackgroundImage = global::OrthoAnalisis.Properties.Resources.nexticon;
+            this.nextButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.nextButton2.FlatAppearance.BorderSize = 0;
+            this.nextButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nextButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextButton2.Location = new System.Drawing.Point(970, 148);
+            this.nextButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nextButton2.Name = "nextButton2";
+            this.nextButton2.Size = new System.Drawing.Size(80, 32);
+            this.nextButton2.TabIndex = 106;
+            this.nextButton2.UseVisualStyleBackColor = true;
+            this.nextButton2.Visible = false;
+            this.nextButton2.Click += new System.EventHandler(this.nextButton2_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1254, 878);
+            this.ClientSize = new System.Drawing.Size(1215, 878);
+            this.Controls.Add(this.nextButton2);
+            this.Controls.Add(this.nextButton1);
             this.Controls.Add(this.btnDeleteAll);
             this.Controls.Add(this.btnCaptureAgain2);
             this.Controls.Add(this.btnCaptureAgain);
-            this.Controls.Add(this.cboDevices2);
             this.Controls.Add(this.btnTakePhoto2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.picBox2);
             this.Controls.Add(this.btnTakePhoto);
             this.Controls.Add(this.picBox1);
-            this.Controls.Add(this.cboDevices);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btndescargar);
@@ -385,7 +396,6 @@
         private System.Windows.Forms.TextBox txtnombres;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cboDevices;
         private System.Windows.Forms.PictureBox picBox1;
         private System.Windows.Forms.Button btnTakePhoto;
         private System.Windows.Forms.Label label6;
@@ -398,11 +408,12 @@
         private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnTakePhoto2;
-        private System.Windows.Forms.ComboBox cboDevices2;
         private System.Windows.Forms.Button btnCaptureAgain;
         private System.Windows.Forms.Button btnCaptureAgain2;
         private System.Windows.Forms.ComboBox combosex;
         private System.Windows.Forms.Button btnDeleteAll;
+        private System.Windows.Forms.Button nextButton1;
+        private System.Windows.Forms.Button nextButton2;
     }
 }
 

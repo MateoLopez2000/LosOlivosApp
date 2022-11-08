@@ -161,6 +161,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Iconsmind-Outline-Foot.ico" />
+    <Content Include="Resources\nexticon.png" />
+    <None Include="Resources\Plantilla2.html" />
+    <Content Include="Resources\ready.jpeg" />
+    <None Include="Resources\ready1.jpeg" />
+    <None Include="Resources\nexticon1.png" />
     <Content Include="Resources\olivos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

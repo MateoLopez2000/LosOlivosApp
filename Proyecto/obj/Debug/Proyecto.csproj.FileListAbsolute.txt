@@ -137,3 +137,5 @@ C:\Users\andre\OneDrive\Desktop\PASARELA\LosOlivosApp\Proyecto\obj\Debug\OrthoAn
 C:\Users\andre\OneDrive\Desktop\PASARELA\LosOlivosApp\Proyecto\obj\Debug\Proyecto.csproj.CopyComplete
 C:\Users\andre\OneDrive\Desktop\PASARELA\LosOlivosApp\Proyecto\obj\Debug\OrthoAnalisis.exe
 C:\Users\andre\OneDrive\Desktop\PASARELA\LosOlivosApp\Proyecto\obj\Debug\OrthoAnalisis.pdb
+C:\Users\andre\OneDrive\Desktop\PASARELA\LosOlivosApp\Proyecto\bin\Debug\SharpAvi.dll
+C:\Users\andre\OneDrive\Desktop\PASARELA\LosOlivosApp\Proyecto\bin\Debug\SharpAvi.xml

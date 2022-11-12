@@ -103,14 +103,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OrthoAnalisis.exe" size="417192">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OrthoAnalisis.exe" size="416168">
       <assemblyIdentity name="OrthoAnalisis" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Zoo+n4bi1YLtJQIM8qRgF2c2kLrf63X+BbwfDWNzU6o=</dsig:DigestValue>
+        <dsig:DigestValue>8DvoKMS5G/GmHHZCk4PyJkHL+z6Mp2DJ7qnXUOYYYJQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SharpAvi.dll" size="77824">
+      <assemblyIdentity name="SharpAvi" version="3.0.1.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Jxt1l9bt6xhRqdn9M+4mO1kEcK5AFR2q44qtJ8+iJVY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
